@@ -6,6 +6,7 @@ package camarch;
 
 import camarch.CAMarch.Employee;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  *
@@ -71,6 +72,18 @@ public class Company {
     public int getStaffNumber() {
         return staff.size();
     }
+    
+    // Method to list employees above a given employee number
+    public void listEmployees(int empNumValue) {
+        System.out.println("Employees with EmpNum > " + empNumValue + ":");
+        Iterator<Employee> iterator = staff.iterator();
+        while (iterator.hasNext()) {
+            Employee employee = iterator.next();
+            if (employee.getEmpNum() > empNumValue) {
+                System.out.println(employee.getName());
+            }
+        }
+    }
 
 
     public static void main(String[] args) {
@@ -93,5 +106,10 @@ public class Company {
         System.out.println("Number of employees in defaultCompany: " + defaultCompany.getStaffNumber());
         System.out.println("Number of employees in namedCompany: " + namedCompany.getStaffNumber());
         System.out.println("Number of employees in overloadedCompany: " + overloadedCompany.getStaffNumber());
+        
+        // List employees above a given employee number for each company
+        defaultCompany.listEmployees(1);  
+        namedCompany.listEmployees(1);
+        overloadedCompany.listEmployees(1);
     }
 }
