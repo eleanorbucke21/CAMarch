@@ -34,6 +34,7 @@ public class EmployeeTest {
         displayEmployeeDetails(employee1);
         displayEmployeeDetails(employee2);
         displayEmployeeDetails(employee3);
+        
     }
 
     // Display employee details
