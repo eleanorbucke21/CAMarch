@@ -32,19 +32,27 @@ public class Company {
         this.staff = new ArrayList<>();
         // Additional logic for handling the provided name, if needed
     }
-
+    
+    // Get Comapny Name
     public String getCompanyName() {
         return companyName;
     }
-
+    
+    // Set Company Name
     public void setCompanyName(String companyName) {
         this.companyName = companyName;
     }
-
+    
+    // Add Employee
     public void addEmployee(Employee employee) {
         staff.add(employee);
     }
-
+    
+    // Add new Employee
+    public void addNewStaff(Employee newEmployee) {
+        staff.add(newEmployee);
+    }
+    
     public void displayEmployeeDetails() {
         System.out.println("Employee details for " + companyName + ":");
         for (Employee employee : staff) {
@@ -64,6 +72,11 @@ public class Company {
         Company defaultCompany = new Company();
         Company namedCompany = new Company("NamedCompany");
         Company overloadedCompany = new Company("OverloadedCompany", "John Doe");
+        
+        // Add employees using the addNewStaff method with updated names
+        defaultCompany.addNewStaff(new Employee("Grogu", "grogu@example.com"));
+        namedCompany.addNewStaff(new Employee("Luke", "luke@example.com"));
+        overloadedCompany.addNewStaff(new Employee("Mandalorian", "mandalorian@example.com"));
 
         // Display employee details for each company
         defaultCompany.displayEmployeeDetails();
