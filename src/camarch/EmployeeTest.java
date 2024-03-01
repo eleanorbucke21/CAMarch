@@ -35,6 +35,12 @@ public class EmployeeTest {
         displayEmployeeDetails(employee2);
         displayEmployeeDetails(employee3);
         
+        //Value of m
+        int m = 1;
+        
+        //search&Display names of employees with m
+        searchAndDisplayEmployeesAboveM(projectGroup, m);
+        
     }
 
     // Display employee details
@@ -43,5 +49,15 @@ public class EmployeeTest {
         System.out.println("Employee Email: " + employee.getEmail());
         System.out.println("Employee EmpNum: " + employee.getEmpNum());
         System.out.println();
+    }
+    
+    //search&Display names of employees with m
+    private static void searchAndDisplayEmployeesAboveM(Employee[] employees, int m) {
+        System.out.println("Employees with EmpNum > " + m + ":");
+        for (Employee employee : employees) {
+            if (employee.getEmpNum() > m) {
+                System.out.println(employee.getName());
+            }
+        }
     }
 }
