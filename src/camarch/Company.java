@@ -112,4 +112,8 @@ public class Company {
         namedCompany.listEmployees(1);
         overloadedCompany.listEmployees(1);
     }
+
+    public Manager findManagerByUsername(String username) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }
