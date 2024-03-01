@@ -66,6 +66,12 @@ public class Company {
         System.out.println("Employee EmpNum: " + employee.getEmpNum());
         System.out.println();
     }
+    
+    //Get staff Numbers
+    public int getStaffNumber() {
+        return staff.size();
+    }
+
 
     public static void main(String[] args) {
         // Create a Company using different constructors
@@ -82,5 +88,10 @@ public class Company {
         defaultCompany.displayEmployeeDetails();
         namedCompany.displayEmployeeDetails();
         overloadedCompany.displayEmployeeDetails();
+        
+        //Staff numbers fior each company
+        System.out.println("Number of employees in defaultCompany: " + defaultCompany.getStaffNumber());
+        System.out.println("Number of employees in namedCompany: " + namedCompany.getStaffNumber());
+        System.out.println("Number of employees in overloadedCompany: " + overloadedCompany.getStaffNumber());
     }
 }
