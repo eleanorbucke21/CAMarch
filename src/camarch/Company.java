@@ -25,6 +25,13 @@ public class Company {
         this.companyName = companyName;
         this.staff = new ArrayList<>();
     }
+    
+    // Overloaded constructor with a name parameter
+    public Company(String companyName, String name) {
+        this.companyName = companyName;
+        this.staff = new ArrayList<>();
+        // Additional logic for handling the provided name, if needed
+    }
 
     public String getCompanyName() {
         return companyName;
@@ -53,17 +60,14 @@ public class Company {
     }
 
     public static void main(String[] args) {
-        // Create a Company
-        Company myCompany = new Company("MyCompany");
+        // Create a Company using different constructors
+        Company defaultCompany = new Company();
+        Company namedCompany = new Company("NamedCompany");
+        Company overloadedCompany = new Company("OverloadedCompany", "John Doe");
 
-        // Add employees
-        Employee employee1 = new Employee("John Doe", "john.doe@example.com");
-        Employee employee2 = new Employee("Jane Smith", "jane.smith@example.com");
-
-        myCompany.addEmployee(employee1);
-        myCompany.addEmployee(employee2);
-
-        // Display employee details
-        myCompany.displayEmployeeDetails();
+        // Display employee details for each company
+        defaultCompany.displayEmployeeDetails();
+        namedCompany.displayEmployeeDetails();
+        overloadedCompany.displayEmployeeDetails();
     }
 }
